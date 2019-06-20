@@ -27,7 +27,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Administrator
+ * @author quanmm
  */
 public class DESCS extends javax.swing.JFrame {
 

@@ -10,7 +10,7 @@ import java.math.BigInteger;
 
 /**
  *
- * @author ntluong
+ * @author quanmm
  */
 public class RSA_from extends javax.swing.JFrame {
     

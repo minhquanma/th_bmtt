@@ -48,7 +48,7 @@
                                   <Component id="btnSave" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="txtKey" max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" pref="285" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                               <Component id="jScrollPane2" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -58,7 +58,7 @@
                       <Component id="jLabel1" min="-2" pref="136" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,14 +111,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Input Key:"/>
+        <Property name="text" type="java.lang.String" value="Input Key: (1)"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtKey">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nhap chu vao day..."/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEncrypt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Encrypt"/>
+        <Property name="text" type="java.lang.String" value="Encrypt (2)"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncryptActionPerformed"/>
@@ -134,7 +137,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSave">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ghi File"/>
+        <Property name="text" type="java.lang.String" value="Ghi File (3)"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveActionPerformed"/>
@@ -142,7 +145,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Plain Text:"/>
+        <Property name="text" type="java.lang.String" value="Plain Text: (4)"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

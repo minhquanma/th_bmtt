@@ -10,7 +10,7 @@ import static java.time.Clock.system;
 
 /**
  *
- * @author ntluo
+ * @author quanmm
  */
 public class Play_Fail_Cipher extends javax.swing.JFrame {
 
@@ -57,14 +57,14 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
         txtMaHoa.setRows(5);
         jScrollPane2.setViewportView(txtMaHoa);
 
-        btnMaHoa.setText("v Encypt v");
+        btnMaHoa.setText("v Encrypt v");
         btnMaHoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMaHoaActionPerformed(evt);
             }
         });
 
-        btnGiaiMa.setText("^ Dencypt ^");
+        btnGiaiMa.setText("^ Decrypt ^");
         btnGiaiMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGiaiMaActionPerformed(evt);
@@ -98,7 +98,7 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
                 .addComponent(btnMaHoa)
                 .addGap(33, 33, 33)
                 .addComponent(btnGiaiMa)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,20 +125,20 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
 
     public static String findIndex(String[][] arr, String test)
 	{
-		String index = "";
-		for(int i=0; i<arr.length; i++)
-		{
-			for(int j=0; j<arr[i].length; j++)
-			{
-				if(test.equalsIgnoreCase(arr[i][j]))
-				{
-					index = String.valueOf(i) + String.valueOf(j);
-					return index;
-					}
-				}
-			}
-		return null;
-		}
+            String index = "";
+            for(int i=0; i< arr.length; i++)
+            {
+                for(int j=0; j<arr[i].length; j++)
+                {
+                    if(test.equalsIgnoreCase(arr[i][j]))
+                    {
+                        index = String.valueOf(i) + String.valueOf(j);
+                        return index;
+                    }
+                }
+            }
+            return null;
+        }
     
     
     private void btnMaHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaHoaActionPerformed
@@ -151,20 +151,21 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
                 {"L","P","Q","S","T"},
                 {"U","V","W","X","Z"},
         };
-        System.out.println("Enter a plaintext:");
+ 
         plainTxt = txtVanBan.getText();
-        String temp="";
-        String arr[]=plainTxt.split(" ");
+        String temp = "";
+        String arr[] = plainTxt.split(" ");
+        
         for(int j=0; j<arr.length;j++)
         {
             temp = arr[j];
             if(temp.length() %2 != 0)
             {
-                temp = temp+"x";
+                temp = temp + "x";
             }
             plainText = plainText + temp +" ";
         }
-        for(int i = 0; i<plainText.length(); i+=2)
+        for(int i = 0; i < plainText.length(); i+=2)
         {
             char c = plainText.charAt(i);
                 char d = plainText.charAt(i);
@@ -245,9 +246,7 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
                             }
                             }
                         
-                
-                System.out.println("The cipher text of the above plain text is:");
-                System.out.println(cipherText);
+       
                 txtMaHoa.setText(cipherText.toString().toUpperCase());                                        
         }
                        
@@ -255,7 +254,7 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
 
     private void btnGiaiMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaiMaActionPerformed
         // TODO add your handling code here:
-                String plainText = "",cipherText="";
+        String plainText = "",cipherText="";
         String playFairMatrix[][]= {
                 {"M","0","N","A","R"},
                 {"C","H","Y","B","D"},
@@ -263,8 +262,8 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
                 {"L","P","Q","S","T"},
                 {"U","V","W","X","Z"},
         };
-        System.out.println("Enter a plaintext:");
         cipherText = txtMaHoa.getText();
+        
         txtMaHoa.setText(cipherText.toString().toUpperCase());        
         for(int i = 0; i<cipherText.length(); i+=2)
         {
@@ -285,72 +284,61 @@ public class Play_Fail_Cipher extends javax.swing.JFrame {
                 }
             else
             {
-                    if(val.equalsIgnoreCase("J"))
-                    {
-                    index1 = findIndex(playFairMatrix, String.valueOf("I"));
-                    }
-            else
-            {
-                    index1 = findIndex(playFairMatrix, String.valueOf(cipherText.charAt(i)));
+                
+            if(val.equalsIgnoreCase("J")) {
+                index1 = findIndex(playFairMatrix, String.valueOf("I"));
+            } else {
+                index1 = findIndex(playFairMatrix, String.valueOf(cipherText.charAt(i)));
             }
-            if(vald.equalsIgnoreCase("J"))
-                    {
-                    index2 = findIndex(playFairMatrix, String.valueOf("I"));
-                    }
-            else
-            {
-                    index2 = findIndex(playFairMatrix, String.valueOf(cipherText.charAt(i+1)));		
+            
+            if(vald.equalsIgnoreCase("J")) {
+               index2 = findIndex(playFairMatrix, String.valueOf("I"));
+            } else {
+                index2 = findIndex(playFairMatrix, String.valueOf(cipherText.charAt(i+1)));		
             }
-            if(index1.charAt(0) == index2.charAt(0))
-                {
+            
+            if(index1.charAt(0) == index2.charAt(0)) {
                 int m = Integer.parseInt(String.valueOf(index1.charAt(1)));
                 int n = Integer.parseInt(String.valueOf(index2.charAt(1)));
                 int o = Integer.parseInt(String.valueOf(index1.charAt(0)));
                 int p = Integer.parseInt(String.valueOf(index2.charAt(0)));
-                if(m==0)
-                {
-                        m=5;
-                }
-                        if(n==0)
-                        {
-                                n=5;
-                        }
-                                plainText=plainText+playFairMatrix[o][m-1];
-                                plainText=plainText+playFairMatrix[p][n-1];
-                }
-                else if(index1.charAt(1) == index2.charAt(1))
-                {
-                        int o = Integer.parseInt(String.valueOf(index1.charAt(0)));
-                        int m = Integer.parseInt(String.valueOf(index1.charAt(1)));
-                        int p = Integer.parseInt(String.valueOf(index2.charAt(0)));
-                        int n = Integer.parseInt(String.valueOf(index2.charAt(1)));
-                        if(p==0)
-                                {
-                                        p=5;
-                                }
-                        if(o==0)
-                                {
-                                        o=5;
-                                }
-                                        cipherText=cipherText+playFairMatrix[o-1][m];
-                                        cipherText=cipherText+playFairMatrix[p-1][n];
-                        }
-                        else
-                        {
-                            int o = Integer.parseInt(String.valueOf(index1.charAt(0)));
-                            int m = Integer.parseInt(String.valueOf(index1.charAt(1)));
-                            int p = Integer.parseInt(String.valueOf(index2.charAt(0)));
-                            int n = Integer.parseInt(String.valueOf(index2.charAt(1)));
-                            plainText=plainText+playFairMatrix[o][n];
-                            plainText=plainText+playFairMatrix[p][m];
-            
-                            }
-                            }
-                        
                 
-                System.out.println("The cipher text of the above plain text is:");
-                System.out.println(plainText);
-                txtMaHoa.setText(plainText.toString().toUpperCase());  
+                if(m==0) {
+                    m=5;
+                }
+                if(n==0) {
+                    n=5;
+                }
+                    plainText=plainText+playFairMatrix[o][m-1];
+                    plainText=plainText+playFairMatrix[p][n-1];
+                }
+                else if(index1.charAt(1) == index2.charAt(1)) {
+                    int o = Integer.parseInt(String.valueOf(index1.charAt(0)));
+                    int m = Integer.parseInt(String.valueOf(index1.charAt(1)));
+                    int p = Integer.parseInt(String.valueOf(index2.charAt(0)));
+                    int n = Integer.parseInt(String.valueOf(index2.charAt(1)));
+                    if(p==0)
+                            {
+                                    p=5;
+                            }
+                    if(o==0)
+                            {
+                                    o=5;
+                            }
+                                    cipherText=cipherText+playFairMatrix[o-1][m];
+                                    cipherText=cipherText+playFairMatrix[p-1][n];
+                } else {
+                    int o = Integer.parseInt(String.valueOf(index1.charAt(0)));
+                    int m = Integer.parseInt(String.valueOf(index1.charAt(1)));
+                    int p = Integer.parseInt(String.valueOf(index2.charAt(0)));
+                    int n = Integer.parseInt(String.valueOf(index2.charAt(1)));
+                    plainText=plainText+playFairMatrix[o][n];
+                    plainText=plainText+playFairMatrix[p][m];
+
+                }
+            }
+                            
+            txtMaHoa.setText(plainText.toString().toUpperCase());  
         }
     }//GEN-LAST:event_btnGiaiMaActionPerformed
 

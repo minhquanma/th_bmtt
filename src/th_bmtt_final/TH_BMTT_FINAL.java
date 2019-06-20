@@ -7,7 +7,7 @@ package th_bmtt_final;
 
 /**
  *
- * @author Administrator
+ * @author quanmm
  */
 public class TH_BMTT_FINAL {
 

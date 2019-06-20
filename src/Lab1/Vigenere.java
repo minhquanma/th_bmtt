@@ -6,7 +6,7 @@ package Lab1;
 
 /**
  *
- * @author ntluong
+ * @author quanmm
  */
 public class Vigenere extends javax.swing.JFrame {
 
@@ -49,7 +49,7 @@ public class Vigenere extends javax.swing.JFrame {
         TxtArea_Plain.setRows(5);
         jScrollPane1.setViewportView(TxtArea_Plain);
 
-        jLabel2.setText("Key: ");
+        jLabel2.setText("Key: (chỉ nhập chữ) ");
 
         btn_Encypt.setText("v Encrypt v");
         btn_Encypt.addActionListener(new java.awt.event.ActionListener() {
@@ -75,10 +75,6 @@ public class Vigenere extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143))
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +90,11 @@ public class Vigenere extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)
                     .addComponent(txt_Key, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,25 +142,25 @@ public class Vigenere extends javax.swing.JFrame {
         String key = txt_Key.getText();    
         key = key.toUpperCase();
         
-        String cipher ="";
+        String cipher = "";
         int keyindex =0 ;
-        for(int plaintextindex =0; plaintextindex< plaintext.length(); plaintextindex++)
+        for(int plaintextindex = 0; plaintextindex < plaintext.length(); plaintextindex++)
         {
             char pchar = plaintext.charAt(plaintextindex);
             int ascii = (int) pchar;
-            if(pchar ==' ')
+            if(pchar == ' ')
             {
                cipher += pchar;
                continue;
             }
-            if(ascii <65 || ascii >90)
+            if(ascii < 65 || ascii > 90)
             {
                 cipher += pchar;
                continue;
-           }
-            int base_plain_text = ((int)pchar) -65;
+            }
+            int base_plain_text = ((int)pchar) - 65;
             char key_char = key.charAt(keyindex);
-            int base_key = ((int)key_char) -65;
+            int base_key = ((int)key_char) - 65;
             int tb = table[base_plain_text][base_key];
             
             char c = (char)(tb+65);
@@ -171,7 +171,7 @@ public class Vigenere extends javax.swing.JFrame {
                 keyindex= 0;
             }
             System.out.println("văn bản sau mã hóa:" + " " + cipher);
-            TxtArea_cipher.setText(cipher.toString().toUpperCase());
+            TxtArea_cipher.setText(cipher.toUpperCase());
         }
                  
     }//GEN-LAST:event_btn_EncyptActionPerformed
@@ -228,8 +228,8 @@ public class Vigenere extends javax.swing.JFrame {
                  k_index = 0;
         }
         System.out.println("Văn bản sau khi giải mã:" + plainText);
-        TxtArea_cipher.setText(cipher_Text.toString().toUpperCase());
-        TxtArea_Plain.setText(plainText.toString().toUpperCase());
+        TxtArea_cipher.setText(cipher_Text.toUpperCase());
+        TxtArea_Plain.setText(plainText.toUpperCase());
     }//GEN-LAST:event_btb_DecyptActionPerformed
 
     

@@ -9,7 +9,7 @@ package Lab5;
 import java.security.MessageDigest;
 
 /**
- * @author ntluong
+ * @author quanmm
  */
 public class Hash_SHA extends javax.swing.JFrame {
     

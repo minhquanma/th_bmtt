@@ -23,7 +23,7 @@ import javax.crypto.spec.DHParameterSpec;
 
 /**
  *
- * @author Administrator
+ * @author quanmm
  */
 public class Alice extends javax.swing.JFrame {
 

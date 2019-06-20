@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ntluong94
+ * @author quanmm
  */
 public class Ceasar extends javax.swing.JFrame {
 

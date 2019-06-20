@@ -22,7 +22,7 @@ import javax.crypto.spec.DHParameterSpec;
 
 /**
  *
- * @author Administrator
+ * @author quanmm
  */
 public class Bob extends javax.swing.JFrame {
 

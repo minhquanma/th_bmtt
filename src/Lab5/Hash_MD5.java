@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 
 /**
- * @author ntluong
+ * @author quanmm
  */
 public class Hash_MD5 extends javax.swing.JFrame {
 

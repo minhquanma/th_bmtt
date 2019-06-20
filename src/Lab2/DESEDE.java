@@ -17,7 +17,7 @@ import sun.misc.BASE64Encoder;
 
 /**
  *
- * @author buian
+ * @author quanmm
  */
 public class DESEDE extends javax.swing.JFrame {
 

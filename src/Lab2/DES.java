@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ntluong94
+ * @author quanmm
  */
 public class DES extends javax.swing.JFrame {
 
@@ -65,9 +65,11 @@ public class DES extends javax.swing.JFrame {
 
         jLabel1.setText("Thuật toán mã hóa DES");
 
-        jLabel2.setText("Input Key:");
+        jLabel2.setText("Input Key: (1)");
 
-        btnEncrypt.setText("Encrypt");
+        txtKey.setText("Nhap chu vao day...");
+
+        btnEncrypt.setText("Encrypt (2)");
         btnEncrypt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncryptActionPerformed(evt);
@@ -81,14 +83,14 @@ public class DES extends javax.swing.JFrame {
             }
         });
 
-        btnSave.setText("Ghi File");
+        btnSave.setText("Ghi File (3)");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Plain Text:");
+        jLabel3.setText("Plain Text: (4)");
 
         txtaPlain.setColumns(20);
         txtaPlain.setRows(5);
@@ -135,12 +137,12 @@ public class DES extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(btnSave))
                                 .addComponent(txtKey)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1)
                                 .addComponent(jScrollPane2))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -14,7 +14,7 @@ import java.io.StringReader;
 import java.security.MessageDigest;
 import javax.swing.JOptionPane;
 /**
- * @author ntluong
+ * @author quanmm
  */
 public class SHA_login extends javax.swing.JFrame {
     

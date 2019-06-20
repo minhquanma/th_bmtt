@@ -21,7 +21,7 @@ import sun.misc.BASE64Encoder;
 
 /**
  *
- * @author ntluong94
+ * @author quanmm
  */
 public class AES extends javax.swing.JFrame {
 
@@ -69,27 +69,29 @@ public class AES extends javax.swing.JFrame {
 
         jLabel1.setText("Thuật toán mã hóa AES");
 
-        jLabel2.setText("User name:");
+        jLabel2.setText("User name: (1)");
 
-        jLabel3.setText("Password:");
+        jLabel3.setText("Password: (2)");
+
+        txtUserName.setToolTipText("");
 
         jLabel4.setText("Mã đăng ký:");
 
-        btnLogin.setText("Đăng nhập");
+        btnLogin.setText("Đăng nhập (4)");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
 
-        btnSignUp.setText("Đăng ký");
+        btnSignUp.setText("Đăng ký (3)");
         btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignUpActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Plain text:");
+        jLabel5.setText("Input text: (4)");
 
         txtaPlain.setColumns(20);
         txtaPlain.setRows(5);
@@ -101,21 +103,21 @@ public class AES extends javax.swing.JFrame {
         txtaCipher.setRows(5);
         jScrollPane2.setViewportView(txtaCipher);
 
-        btnEncrypt.setText("Encrypt");
+        btnEncrypt.setText("Encrypt (5)");
         btnEncrypt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncryptActionPerformed(evt);
             }
         });
 
-        btnSave.setText("Save");
+        btnSave.setText("Save (6)");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
 
-        btnDecrypt.setText("Decrypt");
+        btnDecrypt.setText("Decrypt (8)");
         btnDecrypt.setHideActionText(true);
         btnDecrypt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +125,7 @@ public class AES extends javax.swing.JFrame {
             }
         });
 
-        btnOpen.setText("Open");
+        btnOpen.setText("Open (7)");
         btnOpen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOpenActionPerformed(evt);
@@ -141,7 +143,7 @@ public class AES extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 69, Short.MAX_VALUE)
+                .addGap(0, 26, Short.MAX_VALUE)
                 .addComponent(btnEncrypt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSave)
@@ -164,18 +166,20 @@ public class AES extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRegistedKey, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(btnSignUp)
+                                .addGap(34, 34, 34)
                                 .addComponent(btnLogin)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnSignUp))
-                            .addComponent(txtUserName)
-                            .addComponent(txtPassword)
-                            .addComponent(txtRegistedKey)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane3))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
